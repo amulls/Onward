@@ -2,7 +2,7 @@ import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
 
-const CategoryList = async () => {
+const Bundles = async () => {
   const wixClient = await wixClientServer();
 
   const cats = await wixClient.collections.queryCollections().find();
@@ -18,15 +18,15 @@ const CategoryList = async () => {
           >
             <div className="relative bg-slate-100 w-full h-96">
               <Image
-                src={item.media?.mainMedia?.image?.url || "cat.png"}
-                alt=""
+                src={item.media?.mainMedia?.image?.url}
+                alt="Product"
                 fill
                 sizes="20vw"
                 className="object-cover"
               />
             </div>
-            <h1 className="mt-8 font-light text-xl tracking-wide">
-              {item.name}
+            <h1 className="mt-8 font-semibold text-xl tracking-wide flex justify-between">
+              <span>{item.name}</span>
             </h1>
           </Link>
         ))}
@@ -35,4 +35,4 @@ const CategoryList = async () => {
   );
 };
 
-export default CategoryList;
+export default Bundles;
