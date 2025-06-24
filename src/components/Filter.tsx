@@ -22,13 +22,28 @@ const Filter = () => {
         <select
           name="type"
           id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
           onChange={handleFilterChange}
         >
           <option>Type</option>
           <option value="physical">Physical</option>
           <option value="digital">Digital</option>
         </select>
+
+        <select
+          name="cat"
+          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
+          onChange={handleFilterChange}
+        >
+          <option>Category</option>
+          <option value="home">Home</option>
+          <option value="finance">Finance</option>
+          <option value="cleaning">Cleaning</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="self-care">Self-Care</option>
+          <option value="career">Career</option>
+        </select>
+        
         <input
           type="text"
           name="min"
@@ -43,16 +58,7 @@ const Filter = () => {
           className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
           onChange={handleFilterChange}
         />
-        {/* TODO: Filter Categories */}
-        <select
-          name="cat"
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
-          onChange={handleFilterChange}
-        >
-          <option>Category</option>
-          <option value="">New Arrival</option>
-          <option value="">Popular</option>
-        </select>
+      
         <select
           name=""
           id=""
@@ -71,8 +77,8 @@ const Filter = () => {
           <option>Sort By</option>
           <option value="asc price">Price (low to high)</option>
           <option value="desc price">Price (high to low)</option>
-          <option value="asc lastUpdated">Newest</option>
-          <option value="desc lastUpdated">Oldest</option>
+          <option value="asc lastUpdated">Newest Items</option>
+          <option value="desc lastUpdated">Oldest Items</option>
         </select>
       </div>
     </div>
