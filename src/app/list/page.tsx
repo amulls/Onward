@@ -13,26 +13,27 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
   );
 
   return (
-    <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
-      {/* CAMPAIGN */}
-      <div className="hidden bg-pink-50 px-4 sm:flex justify-between h-64">
+    <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative mt-40">
+      <div className="hidden bg-pink-50 px-4 sm:flex justify-between h-60">
         <div className="w-2/3 flex flex-col items-center justify-center gap-8">
           <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">
-            Grab up to 50% off on
-            <br /> Selected Products
+            Want 10% Off?
           </h1>
+          <h2 className="text-lg">
+            Join our email list and save on your first order.
+          </h2>
           <button className="rounded-3xl bg-lama text-white w-max py-3 px-5 text-sm">
-            Buy Now
+            Sign Up
           </button>
         </div>
         <div className="relative w-1/3">
-          <Image src="/woman.png" alt="" fill className="object-contain" />
+          <Image src="https://media.istockphoto.com/id/1402835350/photo/pensive-relaxed-african-american-woman-reading-a-book-at-home-drinking-coffee-sitting-on-the.jpg?b=1&s=612x612&w=0&k=20&c=k3OH5BF_GXd-4hpHYPP_2JJZ4Jz6-eG5CeZ3iYaWhms=" alt="" fill className="object-contain" />
         </div>
       </div>
       {/* FILTER */}
       <Filter />
       {/* PRODUCTS */}
-      <h1 className="mt-12 text-xl font-semibold">{cat?.collection?.name} For You!</h1>
+      <h1 className="mt-12 text-xl font-semibold">{cat?.collection?.name}</h1>
       <Suspense fallback={<Skeleton/>}>
         <ProductList
           categoryId={
