@@ -3,59 +3,52 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="py-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-gray-100 text-sm mt-24">
+    <div className="py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-gray-100 text-sm mt-24">
       {/* TOP */}
       <div className="flex flex-col md:flex-row justify-between gap-24">
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">LAMA</div>
+            <div className="text-2xl tracking-wide">ONWARD</div>
           </Link>
           <p>
-            3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
-            States
+            245 Lincoln Avenue, Suite 300, New York, NY 10036
           </p>
-          <span className="font-semibold">hello@lama.dev</span>
-          <span className="font-semibold">+1 234 567 890</span>
+          <span className="font-semibold">contact@onward.com</span>
+          <span className="font-semibold">(555) 123-4567</span>
           <div className="flex gap-6">
             <Image src="/facebook.png" alt="" width={16} height={16} />
             <Image src="/instagram.png" alt="" width={16} height={16} />
-            <Image src="/youtube.png" alt="" width={16} height={16} />
-            <Image src="/pinterest.png" alt="" width={16} height={16} />
-            <Image src="/x.png" alt="" width={16} height={16} />
           </div>
         </div>
         {/* CENTER */}
-        <div className="hidden lg:flex justify-between w-1/2">
+        <div className="hidden lg:flex justify-between w-1/2 mb-20">
           <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">COMPANY</h1>
-            <div className="flex flex-col gap-6">
-              <Link href="">About Us</Link>
-              <Link href="">Careers</Link>
-              <Link href="">Affiliates</Link>
-              <Link href="">Blog</Link>
+            <h1 className="font-medium text-lg">Shop</h1>
+            <div className="flex flex-col gap-4">
+              <Link href="">Shop All</Link>
+              <Link href="">Bundles</Link>
+              <Link href="">Sale</Link>
+              <Link href="">Gift Cards</Link>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between">
+            <h1 className="font-medium text-lg">Company</h1>
+            <div className="flex flex-col gap-4">
+              <Link href="">Our Story</Link>
               <Link href="">Contact Us</Link>
+              <Link href="">Careers</Link>
+              <Link href="">Blog</Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">SHOP</h1>
-            <div className="flex flex-col gap-6">
-              <Link href="">New Arrivals</Link>
-              <Link href="">Accessories</Link>
-              <Link href="">Men</Link>
-              <Link href="">Women</Link>
-              <Link href="">All Products</Link>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between">
-            <h1 className="font-medium text-lg">HELP</h1>
-            <div className="flex flex-col gap-6">
-              <Link href="">Customer Service</Link>
-              <Link href="">My Account</Link>
-              <Link href="">Find a Store</Link>
-              <Link href="">Legal & Privacy</Link>
-              <Link href="">Gift Card</Link>
-            </div>
+            <h1 className="font-medium text-lg">Customer Service</h1>
+            <div className="flex flex-col gap-4">
+              <Link href="">FAQ/Link>
+              <Link href="">Track My Order</Link>
+              <Link href="">Shipping & Delivery</Link>
+              <Link href="">Returns & Exchanges</Link>
+              </div>
           </div>
         </div>
         {/* RIGHT */}
