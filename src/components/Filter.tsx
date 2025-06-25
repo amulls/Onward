@@ -62,7 +62,7 @@ const Filter = () => {
         <select
           name=""
           id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
         >
           <option>All Filters</option>
         </select>
