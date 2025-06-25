@@ -22,7 +22,7 @@ const Filter = () => {
         <select
           name="type"
           id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
           onChange={handleFilterChange}
         >
           <option>Type</option>
