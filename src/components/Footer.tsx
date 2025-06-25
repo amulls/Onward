@@ -53,44 +53,27 @@ const Footer = () => {
         </div>
         {/* RIGHT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
-          <h1 className="font-medium text-lg">SUBSCRIBE</h1>
-          <p>
-            Be the first to get the latest news about trends, promotions, and
-            much more!
-          </p>
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Email address"
-              className="p-4 w-3/4"
-            />
-            <button className="w-1/4 bg-lama text-white">JOIN</button>
-          </div>
           <span className="font-semibold">Secure Payments</span>
           <div className="flex justify-between">
-            <Image src="/discover.png" alt="" width={40} height={20} />
-            <Image src="/skrill.png" alt="" width={40} height={20} />
-            <Image src="/paypal.png" alt="" width={40} height={20} />
-            <Image src="/mastercard.png" alt="" width={40} height={20} />
             <Image src="/visa.png" alt="" width={40} height={20} />
+            <Image src="/mastercard.png" alt="" width={40} height={20} />
+            <Image src="/discover.png" alt="" width={40} height={20} />
+            <Image src="/paypal.png" alt="" width={40} height={20} />
           </div>
         </div>
       </div>
       {/* BOTTOM */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="">© 2024 Lama Shop</div>
-        <div className="flex flex-col gap-8 md:flex-row">
-          <div className="">
-            <span className="text-gray-500 mr-4">Language</span>
-            <span className="font-medium">United States | English</span>
-          </div>
-          <div className="">
-            <span className="text-gray-500 mr-4">Currency</span>
-            <span className="font-medium">$ USD</span>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-12">
+        <div>
+          <div className="flex flex-col mb-12">Shipping to: United States | English</div>
+            <div className="flex flex-col gap-8 md:flex-row">
+              <Link href="">Terms of Use</Link>
+              <Link href="">Privacy Policy</Link>
+            </div>
           </div>
         </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-6">© 2025 ONWARD ALL RIGHTS RESERVED</div>
       </div>
-    </div>
   );
 };
 
