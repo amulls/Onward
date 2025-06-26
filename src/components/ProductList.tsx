@@ -5,8 +5,6 @@ import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import Pagination from "./Pagination";
 
-const PRODUCT_PER_PAGE = 8;
-
 const ProductList = async ({
   categoryId,
   limit,
@@ -28,13 +26,12 @@ const ProductList = async ({
     )
     .gt("priceData.price", searchParams?.min || 0)
     .lt("priceData.price", searchParams?.max || 999999)
-    .limit(limit || PRODUCT_PER_PAGE)
+    .limit(limit || 8)
     .skip(
       searchParams?.page
-        ? parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
+        ? parseInt(searchParams.page) * (limit || 8)
         : 0
     );
-  // .find();
 
   if (searchParams?.sort) {
     const [sortType, sortBy] = searchParams.sort.split(" ");
@@ -63,7 +60,7 @@ const ProductList = async ({
               alt=""
               fill
               sizes="25vw"
-              className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+              className="absolute object-cover rounded-md z-10 opacity-100 hover:opacity-0 transition-opacity easy duration-500"
             />
             {product.media?.items && (
               <Image
@@ -71,22 +68,20 @@ const ProductList = async ({
                 alt=""
                 fill
                 sizes="25vw"
-                className="absolute object-cover rounded-md"
+                className="absolute object-cover rounded-md z-10"
               />
             )}
           </div>
           <div className="flex justify-between">
             <span className="font-medium">{product.name}</span>
-            <span className="font-semibold">${product.price?.price}</span>
+            <span className="font-semibold">{product.price?.price}</span>
           </div>
           {product.additionalInfoSections && (
             <div
               className="text-sm text-gray-500"
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(
-                  product.additionalInfoSections.find(
-                    (section: any) => section.title === "shortDesc"
-                  )?.description || ""
+                  product.description || ""
                 ),
               }}
             ></div>
