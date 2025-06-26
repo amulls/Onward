@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import CartModal from "./CartModal";
+import SearchBar from "./SearchBar";
 import { useWixClient } from "@/hooks/useWixClient";
 import Cookies from "js-cookie";
 import { useCartStore } from "@/hooks/useCartStore";
@@ -20,9 +21,6 @@ const NavIcons = () => {
   const wixClient = useWixClient();
   const isLoggedIn = wixClient.auth.loggedIn();
 
-  // TEMPORARY
-  // const isLoggedIn = false;
-
   const handleProfile = () => {
     if (!isLoggedIn) {
       router.push("/login");
@@ -30,22 +28,6 @@ const NavIcons = () => {
       setIsProfileOpen((prev) => !prev);
     }
   };
-
-  // AUTH WITH WIX-MANAGED AUTH
-
-  // const wixClient = useWixClient();
-
-  // const login = async () => {
-  //   const loginRequestData = wixClient.auth.generateOAuthData(
-  //     "http://localhost:3000"
-  //   );
-
-  //   console.log(loginRequestData);
-
-  //   localStorage.setItem("oAuthRedirectData", JSON.stringify(loginRequestData));
-  //   const { authUrl } = await wixClient.auth.getAuthUrl(loginRequestData);
-  //   window.location.href = authUrl;
-  // };
 
   const handleLogout = async () => {
     setIsLoading(true);
@@ -64,21 +46,21 @@ const NavIcons = () => {
   }, [wixClient, getCart]);
 
   return (
-    <div className="flex items-center gap-4 xl:gap-6 relative">
+    <div className="flex items-center justify-between gap-4 xl:gap-6 relative">
+      <SearchBar />
       <Image
         src="/profile.png"
         alt=""
         width={22}
         height={22}
-        className="cursor-pointer"
-        // onClick={login}
+        className="cursor-pointer hover:scale-110"
         onClick={handleProfile}
       />
       {isProfileOpen && (
         <div className="absolute p-4 rounded-md top-12 left-0 bg-white text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
-          <Link href="/profile">Profile</Link>
+          <Link href="/profile" className="mt-2 cursor-pointer">Profile</Link>
           <div className="mt-2 cursor-pointer" onClick={handleLogout}>
-            {isLoading ? "Logging out" : "Logout"}
+            {isLoading ? "Logging Out..." : "Logout"}
           </div>
         </div>
       )}
@@ -90,10 +72,10 @@ const NavIcons = () => {
         className="cursor-pointer"
       />
       <div
-        className="relative cursor-pointer"
+        className="relative cursor-pointer hover:scale-110"
         onClick={() => setIsCartOpen((prev) => !prev)}
       >
-        <Image src="/cart.png" alt="" width={22} height={22} />
+        <Image src="/cart.png" alt="" width={22} height={22} className="cursor-pointer"/>
         <div className="absolute -top-4 -right-4 w-6 h-6 bg-lama rounded-full text-white text-sm flex items-center justify-center">
           {counter}
         </div>
