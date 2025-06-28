@@ -13,7 +13,7 @@ const ProfilePage = async () => {
   });
 
   if (!user.member?.contactId) {
-    return <div className="">Not logged in!</div>;
+    return <div className="">Not Logged In!</div>;
   }
 
   const orderRes = await wixClient.orders.searchOrders({
@@ -23,7 +23,7 @@ const ProfilePage = async () => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row gap-24 md:h-[calc(100vh-180px)] items-center px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <div className="flex flex-col md:flex-row gap-24 md:h-100 items-center px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
       <div className="w-full md:w-1/2">
         <h1 className="text-2xl">Profile</h1>
         <form action={updateUser} className="mt-12 flex flex-col gap-4">
@@ -32,24 +32,24 @@ const ProfilePage = async () => {
           <input
             type="text"
             name="username"
-            placeholder={user.member?.profile?.nickname || "john"}
+            placeholder={user.member?.profile?.nickname || "jd123"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
           <label className="text-sm text-gray-700">First Name</label>
           <input
             type="text"
             name="firstName"
-            placeholder={user.member?.contact?.firstName || "John"}
+            placeholder={user.member?.contact?.firstName || "Jane"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">Surname</label>
+          <label className="text-sm text-gray-700">Last Name</label>
           <input
             type="text"
             name="lastName"
             placeholder={user.member?.contact?.lastName || "Doe"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">Phone</label>
+          <label className="text-sm text-gray-700">Phone Number</label>
           <input
             type="text"
             name="phone"
@@ -60,11 +60,11 @@ const ProfilePage = async () => {
             }
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">E-mail</label>
+          <label className="text-sm text-gray-700">Email</label>
           <input
             type="email"
             name="email"
-            placeholder={user.member?.loginEmail || "john@gmail.com"}
+            placeholder={user.member?.loginEmail || "janedoe@gmail.com"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
           <UpdateButton />
