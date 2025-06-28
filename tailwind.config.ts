@@ -14,7 +14,18 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        lama: "#F35C7A",
+        lama:"rgb(243, 96, 85)",
+        brown:"rgb(97, 68, 68)",
+        silver:"rgba(189, 187, 187, 0.75)",
+      },
+      animation: {
+        marquee: "marquee 30s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0": {transform: "translateX(0%)"},
+          "100%": {transform: "translateX(-100%)"},
+        },
       },
     },
   },
