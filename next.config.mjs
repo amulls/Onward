@@ -5,6 +5,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.pexels.com",
+        pathname: "/**",
       },
       {
         protocol: "https",
@@ -12,11 +13,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "people.pic1.co",
-      },
-      {
-        protocol: "https",
-        hostname: "app-uploads-cdn.fera.ai",
+        hostname: "nedia.istockphoto.com",
       },
     ],
   },
